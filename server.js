@@ -276,7 +276,93 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ui/style.css', function (req, res) {
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
+});
+
+app.get('/images/java.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'java'));
+});
+
+app.get('/images/web.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'web.jpg'));
+});
+
+app.get('/images/iot.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'iot.jpg'));
+});
+
+app.get('/images/Salesforce.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'Salesforce.jpg'));
+});
+
+app.get('/images/c.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'c.jpg'));
+});
+
+app.get('/images/machine_learning.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'machine_learning.jpg'));
+});
+
+app.get('/images/blockchain.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'blockchain.jpg'));
+});
+
+app.get('/images/the_flash_grant_gustin.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'the_flash_grant_gustin.jpg'));
+});
+
+app.get('/images/friends.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'friends.jpg'));
+});
+
+app.get('/images/got.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'got.jpg'));
+});
+app.get('/images/mr_robot.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', '3mr_robot.jpg'));
+});
+app.get('/images/breaking_bad.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'breaking_bad.jpg'));
+});
+app.get('/images/harry_potter.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'harry_potter.jpg'));
+});
+app.get('/images/godfather.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'godfather.jpg'));
+});
+app.get('/images/godzilla.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'godzilla.jpg'));
+});
+app.get('/images/titanic_love_famous_pose_lovers_romance.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'titanic_love_famous_pose_lovers_romance.jpg'));
+});
+
+app.get('/images/300.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', '300.jpg'));
+});
+
+app.get('/images/bajarangi_bhaijaan.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'bajarangi_bhaijaan.jpg'));
+});
+
+app.get('/images/3-Idiots-vs-PK.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', '3-Idiots-vs-PK.jpg'));
+});
+
+app.get('/images/Sultan.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'Sultan.jpg'));
+});
+
+app.get('/images/teenage_mutant_ninja_turtles.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'teenage_mutant_ninja_turtles.jpg'));
+});
+
+app.get('/images/titanic_love_death.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'titanic_love_death.jpg'));
+});
+
+app.get('/ui/style.scss', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.scss'));
 });
 
