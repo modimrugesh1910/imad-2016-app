@@ -281,7 +281,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/images/java.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'images', 'java'));
+  res.sendFile(path.join(__dirname, 'images', 'java.jpg'));
 });
 
 app.get('/images/web.jpg', function (req, res) {
