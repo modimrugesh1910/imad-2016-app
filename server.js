@@ -75,7 +75,7 @@ app.get('/ui/login.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
 
-app.get('/ui/index.html', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
