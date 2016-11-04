@@ -280,6 +280,10 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article.js'));
 });
 
+app.get('/images/profile.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'images', 'profile.jpg'));
+});
+
 app.get('/images/java.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'images', 'java.jpg'));
 });
