@@ -1,5 +1,148 @@
 console.log('Loaded!');
 
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login/Register to unlock awesome features</h3>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <input type="email" id="username" placeholder="Enter E-mail Id" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
+    // Submit username/password to login
+    var submit = document.getElementById('login_btn');
+    submit.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  submit.value = 'Sucess!';
+              } else if (request.status === 403) {
+                  submit.value = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              } else {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              }
+              loadLogin();
+          }  
+          // Not done yet
+        };
+        
+        // Make the request
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        submit.value = 'Logging in...';
+        
+    };
+    
+    var register = document.getElementById('register_btn');
+    register.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
+        };
+        
+        // Make the request
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        register.value = 'Registering...';
+    
+    };
+}
+
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
+        }
+    };
+    
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+
+function loadArticles () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
+            if (request.status === 200) {
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                    content += `<li>
+                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li>`;
+                }
+                content += "</ul>"
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!')
+            }
+        }
+    };
+    
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
+
+
+// The first thing to do is to check if the user is logged in!
+loadLogin();
+
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
+
+/*
 var button = document.getElementById('counter');
 
 button.onclick = function() {
@@ -22,9 +165,10 @@ button.onclick = function() {
     request.open("GET","http://modimrugesh1910.imad.hasura-app.io/counter", true);
     request.send(null);
 };
+*/
 
-/*
-// submit name
+// submit username/password to login
+/* 
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     // make a request to the server and send the name
@@ -37,29 +181,34 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             // take some action
             if(request.status === 200) {
-                // capture a list of name and render it as a list  
-                var names = request.responceText;     //['name1', 'name2', 'name3', 'name4'];
-                names = JSON.parse(names);
-                var list = '';
-                for(var i=0;i<names.length;i++) {
-                    list += '<li>' + names[i] + '</li>';
-                }
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list;
+                alert('Logged in successfully');
+            } else if(request.status === 403) {
+                alert('Username/password is incorrect');
+            } else if(request.status === 500) {
+                alert('Something went wrong on the server');
             }
         }
         
     };
     // make the request
-    var nameInput = document.getElementById('name');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    
+    console.log(username);
+    console.log(password);
+    
+    request.open('POST', 'http://modimrugesh1910.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({username: username, password: password}));
     var name = nameInput.value;
     
     request.open('GET', 'http://modimrugesh1910.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);
 };
 */
-// login javascript
 
+// login javascript
+/*
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
@@ -103,3 +252,5 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
+
+*/
