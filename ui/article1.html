@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      	<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/ui/style.css" rel="stylesheet" />        
+        <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+        <!--<link rel="stylesheet" href="/ui/slider.css" />-->
+        
+        <style type="text/css">
+            *
+            {
+              margin:0;
+              padding:0;
+            }
+
+            .gallery
+            {
+              width:640px;
+              height:360px;
+              margin:10px auto;
+              background:#999;
+              border:1px solid orange;
+            }
+
+            .slider
+            {
+              width:inherit;
+              height:344px;
+              overflow:scroll;
+            }
+            .slider ul
+            {
+              width:10000px;
+              list-style:none;
+              margin-left:0px;
+            }
+            .slider li
+            {
+              float:left;
+            }
+
+            #slider-nav
+            {
+              display:none; /* This is important to hide the buttons if jQuery is Not supported. */
+              margin-top: -10em;
+              cursor: pointer;    
+            }
+        </style>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
+        
+    </head>
+    
+    <body onload="startTime()">
+        <!-- nav-bar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/ui/login.html">My Portfolio Page</a>
+            </div>
+            
+            <div id="navbar" class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="/ui/login.html">Login</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="/ui/article1.html">Article 1</a></li>
+                  <li><a href="/ui/article2.html">Article 2</a></li>
+                  <li><a href="/ui/article3.html">Article 3</a></li>
+                  <li><a href="#contact">Contact</a></li>
+               </ul>
+            </div>
+          </div>
+        </nav>
+
+        <br><br>
+
+        <h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           My Interests - 
+        </h2> 
+
+      
+    <!-- Container for Slider and Navigation Controls -->
+    <div class="gallery">
+      <h2>Photo Slider</h2>
+      <!-- The actual moving Slider -->
+      <div class="slider">
+        <ul>
+          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image1"></li>
+          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image2"></li>
+          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image3"></li>
+          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image4"></li>
+        </ul>
+      </div>
+      <!-- Navigation Button Controls -->
+      <div id="slider-nav">
+        <button data-dir="prev">Previous</button>
+        <button data-dir="next" style="float:right;">Next</button>
+      </div>
+    </div>
+
+      <br>
+
+      <hr class="featurette-divider">
+      <div class="row">
+        <ul class="list-inline text-center">
+
+        <!--facebook profile-->
+        <li> 
+          <a href="https://www.facebook.com/people/Mrugesh-Modi/100008454007728" role="button">
+            <img src="http://static.iconarchive.com/static/images/social/facebook-icon.png" alt="My Facebook Contact" windth="60" height="60">
+          </a>
+          <!--twitter profile-->
+          <a href="https://twitter.com/" role="button">
+            <img  src="https://g.twimg.com/about/feature-corporate/image/twitterbird_RGB.png" alt="My Twitter Contact" width="60" height="60">
+          </a>
+          <!--GitHub Profile-->
+        
+          <a href="https://github.com/modimrugesh1910" role="button">
+              <img src="https://www.thoughtworks.com/imgs/icons/social/github.png" alt="My Github Profile" width="60" height="60">
+          </a>
+                  
+          <!--LinkedIn Profile-->
+          <a href="https://www.linkedin.com/in/mrugesh-modi-b49a93a2" role="button">
+              <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2000px-LinkedIn_Logo.svg.png" alt="My LinkedIn Profile" 
+              width="100" height="50">
+          </a>
+        </li>
+        </ul>
+      </div>
+
+        <hr class="featurette-divider">
+         <div class="row" id="contact">
+            <ul class="list-inline text-center">
+               <li>
+                   <i class="glyphicon glyphicon-globe"></i> <a href="https://www.linkedin.com/in/mrugesh-modi-b49a93a2">Mrugesh Modi</a>
+                </li>
+                <li>
+                   <i class="glyphicon glyphicon-pushpin"></i> India
+                </li>
+                <li>
+                   <i class="glyphicon glyphicon-envelope"></i> modimrugesh1910@gmail.com
+                </li>
+                <li>
+                   <i class="glyphicon glyphicon-phone"></i> 91-9426391296
+                </li>
+            </ul>
+        </div>
+        
+        <hr class="featurette-divider">
+    </div>
+    
+    <footer class="footer">
+         <div class="container">
+          <!--  <p class="pull-right"><a href="#" >
+               <i class="glyphicon glyphicon-menu-up"></i>
+               Goto top</a>
+            </p>
+          -->
+        </div>
+    </footer>
+    <!--
+    <script type="text/javascript" src="/ui/main.js"></script>
+    <script type="text/javascript" src="/ui/slider.js"></script>
+    -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    -->
+     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+     <script src="/ui/jquery-2.1.0.js"></script>
+     <script src="/ui/simpleSlider.js"></script>
+     <script>
+      // 
+      jQuery(document).ready(function ($) {
+        // creating a container variable to hold the 'UL' elements. It uses method chaining.
+        var container=$('div.slider')
+                      .css('overflow','hidden')
+                      .children('ul');
+        
+        /* 
+        On the event of mouse-hover, 
+          i) Change the visibility of Button Controls.
+          ii) SET/RESET the "intv" variable to switch between AutoSlider and Stop mode.
+        */
+        $('.gallery').hover(function( e ){
+          $('#slider-nav').toggle();
+          return e.type=='mouseenter'?clearInterval(intv):autoSlider();
+        });
+        
+        // Creating the 'slider' instance which will set initial parameters for the Slider.
+        var sliderobj= new slider(container,$('#slider-nav'));
+        /*
+        This will trigger the 'setCurrentPos' and 'transition' methods on click of any button
+         "data-dir" attribute associated with the button will determine the direction of sliding.
+        */
+        sliderobj.nav.find('button').on('click', function(){
+          sliderobj.setCurrentPos($(this).data('dir'));
+          sliderobj.transition();
+        });
+        
+        autoSlider(); // Calling autoSlider() method on Page Load.
+        
+        /* 
+        This function will initialize the interval variable which will cause execution of the inner function after every 2 seconds automatically.
+        */
+        function autoSlider()
+        {
+          return intv = setInterval(function(){
+            sliderobj.setCurrentPos('next');
+            sliderobj.transition();
+          }, 2000);
+        }
+        
+      });
+  </body>
+</html>
