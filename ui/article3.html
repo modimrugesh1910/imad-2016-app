@@ -16,8 +16,8 @@
 
             .gallery
             {
-              width:640px;
-              height:360px;
+              width:642px;
+              height:362px;
               margin:10px auto;
               background:#999;
               border:1px solid orange;
@@ -26,7 +26,7 @@
             .slider
             {
               width:inherit;
-              height:344px;
+              height:360px;
               overflow:scroll;
             }
             .slider ul
@@ -76,32 +76,37 @@
 
         <br><br>
 
-        <h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-           My Interests - 
+        <h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           My Interest In Movies
         </h2> 
 
       
     <!-- Container for Slider and Navigation Controls -->
     <div class="gallery">
-      <h2>Photo Slider</h2>
       <!-- The actual moving Slider -->
       <div class="slider">
         <ul>
-          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image1"></li>
-          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image2"></li>
-          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image3"></li>
-          <li><img src="https://drive.google.com/open?id=0B1wq8ufyJfFZRVBSNDk3QUR1WU0" class="slides" alt="Image4"></li>
+          <li><img src="harry_potter.jpg" class="slides" alt="Image1"></li>
+          <li><img src="godfather.jpg" class="slides" alt="Image2"></li>
+          <li><img src="godzilla.jpg" class="slides" alt="Image3"></li>
+          <li><img src="titanic_love_famous_pose_lovers_romance.jpg" class="slides" alt="Image4"></li>
+          <li><img src="300.jpg" class="slides" alt="Image5"></li>
+          <li><img src="bajarangi_bhaijaan.jpg" class="slides" alt="Image6"></li>
+          <li><img src="3-Idiots-vs-PK.jpg" class="slides" alt="Image6"></li>
+          <li><img src="Sultan.jpg" class="slides" alt="Image6"></li>
+          <li><img src="teenage_mutant_ninja_turtles.jpg" class="slides" alt="Image7"></li>
+          <li><img src="titanic_love_death.jpg" class="slides" alt="Image8"></li>
         </ul>
       </div>
       <!-- Navigation Button Controls -->
       <div id="slider-nav">
-        <button data-dir="prev">Previous</button>
-        <button data-dir="next" style="float:right;">Next</button>
+        <button class="btn btn-primary btnPrevious" data-dir="prev">Previous</button>
+        <button class="btn btn-primary btnNext" data-dir="next" style="float:right;">Next</button>
       </div>
     </div>
 
-      <br>
+      
 
       <hr class="featurette-divider">
       <div class="row">
@@ -173,8 +178,8 @@
     -->
      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
      <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-     <script src="/ui/jquery-2.1.0.js"></script>
-     <script src="/ui/simpleSlider.js"></script>
+     <script src="jquery-2.1.0.js"></script>
+     <script src="simpleSlider.js"></script>
      <script>
       // 
       jQuery(document).ready(function ($) {
@@ -218,6 +223,6 @@
         }
         
       });
-      </script>
+    </script>
   </body>
 </html>
