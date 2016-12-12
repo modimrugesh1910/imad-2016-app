@@ -2,7 +2,7 @@
 
 
 Hi,
-	My Name is Mrugesh Modi. I am currently studying final year of B.Tech(ICT) at Dhirubhai Ambani Institute of Information and Communication Technology(DA-IICT), Gandhinagar, Gujarat. 
+	My Name is Mrugesh Modi. I am pursuing final year B.Tech(ICT) at Dhirubhai Ambani Institute of Information and Communication Technology(DA-IICT), Gandhinagar, Gujarat. 
   I am lived in the hostel of college. I am interested as Software Engineer and Web Developer. I have explored in HTML5, CSS3, JavaScript, jQuery, PHP, MySQL in Web Technologies.
   I also know C and java programming Language. My passion is to build awesome stuff and learn more by self effort. I want to work with curious and amazing people. 
 
